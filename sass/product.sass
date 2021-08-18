@@ -1,0 +1,59 @@
+@import 'responsive'
+
+.product
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		padding-top: 50px
+		margin: 0 -20px
+		position: relative
+		+media(sm)
+			margin: 0px
+			padding-top: 40px
+		&:after
+			position: absolute
+			z-index: -1
+			content: ' '
+			top: 0px
+			left: calc(465px - 7px + 20px)
+			width: 7px
+			height: 100%
+			background-color: #2a71f6
+			+media(md)
+				display: none
+
+	&__item
+		display: block
+		width: calc(100% / 3 - 40px)
+		background-color: #fff
+		padding: 35px 40px
+		margin: 0 20px
+		margin-bottom: 40px
+		+media(mdx)
+			width: calc(100% / 2 - 40px)
+			padding: 35px 20px
+		+media(sm)
+			max-width: 450px
+			width: 100%
+			margin: 0 auto
+			margin-bottom: 40px
+
+	&__title
+		font-size: 24px
+		line-height: 1.2
+		color: #333
+		text-transform: uppercase
+		padding-bottom: 20px
+		font-weight: 900
+		+media(md)
+			font-size: 22px
+		+media(sm)
+			font-size: 20px
+
+	&__text
+		font-size: 16px
+		line-height: 1.5
+		color: #333
+		padding-bottom: 28px
+		+media(sm)
+			font-size: 15px

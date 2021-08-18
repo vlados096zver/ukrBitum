@@ -1,0 +1,120 @@
+@import 'responsive'
+
+.contacts
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		background-color: #667084
+
+	&__item
+		padding: 35px
+		+media(mdx)
+			padding: 35px 20px
+		&--aside
+			width: 465px
+			position: relative
+			+media(mdx)
+				width: 100%
+				padding-bottom: 0px
+			&:after
+				position: absolute
+				content: ' '
+				top: 0px
+				right: 0px
+				width: 7px
+				height: 100%
+				background-color: #fff
+				+media(mdx)
+					display: none
+
+		&--content
+			width: calc(100% - 465px)
+			+media(mdx)
+				width: 100%
+				padding-top: 25px
+
+	&__text
+		max-width: 370px
+		+media(mdx)
+			max-width: 100%
+		p
+			font-size: 16px
+			line-height: 1.5
+			color: #fff
+			padding-bottom: 1.6em
+			+media(sm)
+				font-size: 15px
+
+		h1, h2, h3, h4, h5, h6
+			color: #fff
+			margin-bottom: 0.5em
+
+		h1
+			font-size: 30px
+
+		h2
+			font-size: 26px
+
+		h3
+			font-size: 22px
+
+		h4, h5, h6
+			font-size: 18px
+
+		li
+			list-style-position: inside
+			font-size: 17px
+			line-height: 1.35
+			color: #fff
+			font-weight: 500
+			+media(sm)
+				font-size: 16px
+
+		ul, ol
+			padding: 0.5em 0 0.5em 1em
+			margin: 0
+
+		ol > li
+			list-style-type: decimal
+
+		ul > li
+			list-style-type: disc
+
+	&__box
+		display: flex
+		margin-bottom: 38px
+		+media(smx)
+			display: block
+
+	&__elem
+		width: 210px
+		text-align: right
+		padding-right: 35px
+		margin-top: 14px
+		+media(smx)
+			width: 100%
+			text-align: left
+			padding-right: 0px
+			margin-bottom: 15px
+
+	&__title
+		cursor: pointer
+		user-select: none
+		font-size: 16px
+		line-height: 1.5
+		color: #fff
+		text-transform: uppercase
+
+	&__wrap-error
+		width: calc(100% - 210px)
+		margin-left: auto
+		margin-bottom: 10px
+		+media(smx)
+			width: 100%
+
+	&__error
+		font-size: 16px
+		color: #8B0000
+		padding-bottom: 15px
+		text-transform: uppercase
+		font-weight: 700

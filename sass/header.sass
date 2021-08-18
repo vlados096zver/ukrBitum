@@ -1,0 +1,157 @@
+@import 'responsive'
+
+.main-header
+	padding-top: 40px
+	margin-bottom: 70px
+	+media(md)
+		padding-top: 35px
+		margin-bottom: 50px
+	+media(sm)
+		margin-bottom: 45px
+
+	&__box
+		display: flex
+		align-items: center
+		justify-content: space-between
+		+media(smx)
+			flex-direction: column
+
+	&__wrap
+		position: relative
+		display: flex
+		align-items: center
+		+media(smx)
+			width: 100%
+			justify-content: center
+
+	&__logo
+		display: block
+		+media(smx)
+			margin-bottom: 25px
+
+	&__text
+		font-size: 36px
+		line-height: 1.8
+		color: #fff
+		text-transform: uppercase
+		font-weight: 900
+
+	&__menu
+		margin-right: 20px
+
+	&__list
+		display: flex
+		li:not(:last-child)
+			margin-right: 35px
+			+media(lgm)
+				margin-right: 30px
+		+media(xxs)
+			display: none
+			width: 100%
+			top: 100%
+			left: 0
+			z-index: 8
+			position: absolute
+			padding-top: 35px
+			padding-bottom: 15px
+			max-height: calc(100vh - 70px)
+			background-color: #2e374a
+			border-bottom: 2px solid #fff
+			overflow-y: auto
+			overflow-x: hidden
+
+	&__link
+		position: relative
+		cursor: pointer
+		display: inline-block
+		font-size: 14px
+		line-height: 1.2
+		color: #fff
+		text-transform: uppercase
+		transition: 0.3s color
+		+media(xxs)
+			margin-bottom: 15px
+
+		&--active
+			position: relative
+			+media(xxs)
+				color: #2a71f6
+			&:after
+				position: absolute
+				content: ' '
+				bottom: -15px
+				left: calc(50% - 13px)
+				width: 26px
+				height: 4px
+				background-color: #fff
+				border-radius: 2px
+				transition: 0.3s background-color
+				+media(smx)
+					width: 100%
+					left: 0px
+				+media(xxs)
+					display: none
+
+		&:hover:not(.main-header__link--active)
+			color: #2a71f6
+
+	&__description
+		font-size: 14px
+		color: #fff
+		text-transform: uppercase
+		padding-right: 15px
+		font-weight: 500
+
+
+.mobile-wrap
+	display: none
+	align-items: center
+	justify-content: space-between
+	cursor: pointer
+	+media(xxs)
+		display: flex
+		width: 100%
+
+.line-burger
+	display: block
+	position: absolute
+	top: 50%
+	left: 0
+	width: 25px
+	height: 3px
+	background-color: #fff
+	transition: 0.5s width
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		width: 25px
+		height: 3px
+		background-color: #fff
+		left: 0
+		transition: 0.5s
+	&:after
+		top: calc(100% + 5px)
+	&:before
+		bottom: calc(100% + 5px)
+
+.line-active
+	width: 0
+	&:after
+		top: 9px
+		transform: rotate(-45deg)
+		transform-origin: 0 0
+	&:before
+		bottom: 9px
+		transform: rotate(45deg)
+		transform-origin: 0 100%
+
+.main-nav__toggle
+	position: relative
+	cursor: pointer
+	display: none
+	width: 25px
+	height: 25px
+	margin-top: -4px
+	+media(xxs)
+		display: block
